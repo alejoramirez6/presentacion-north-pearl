@@ -45,6 +45,21 @@ body {
     justify-content: center;
 }
 
+/* Estilos para logos */
+.company-logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-right: 15px;
+}
+
+.main-logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
+
 /* Diapositiva 1 - Portada */
 .slide-1 {
     background: var(--gradient);
@@ -552,19 +567,16 @@ body {
 }
 
 .logo-icon {
-    width: 100px;
-    height: 100px;
-    background: var(--gradient);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-}
-
-.logo-icon i {
-    font-size: 3rem;
-    color: var(--white);
+    background: var(--gradient);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 20px;
+    box-shadow: var(--shadow);
 }
 
 .company-logo h1 {
@@ -719,5 +731,15 @@ body {
     .clients-logos {
         flex-direction: column;
         gap: 20px;
+    }
+    
+    .company-logo-img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .main-logo-img {
+        width: 100px;
+        height: 100px;
     }
 } 
