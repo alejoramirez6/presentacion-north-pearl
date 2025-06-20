@@ -1,0 +1,723 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #002f6c;
+    --accent-turquoise: #00c2cb;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --text-dark: #2c3e50;
+    --shadow: 0 4px 20px rgba(0, 47, 108, 0.1);
+    --gradient: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-turquoise) 100%);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--light-gray);
+    overflow: hidden;
+    height: 100vh;
+}
+
+.slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 60px;
+    position: relative;
+    background: var(--white);
+}
+
+.slide.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-content {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Diapositiva 1 - Portada */
+.slide-1 {
+    background: var(--gradient);
+    color: var(--white);
+}
+
+.slide-1 .slide-content {
+    text-align: center;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo-placeholder {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.logo-placeholder i {
+    font-size: 30px;
+    margin-right: 15px;
+    color: var(--accent-turquoise);
+}
+
+.title-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.title-section h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.subtitle {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.subtitle p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.footer-info {
+    text-align: right;
+    font-size: 1rem;
+}
+
+/* Diapositiva 2 - Diagnóstico */
+.slide-2 h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.problem-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-left: 5px solid var(--accent-turquoise);
+    transition: transform 0.3s ease;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+}
+
+.problem-card i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.problem-card h3 {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.problem-card p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Diapositiva 3 - Propuesta General */
+.slide-3 h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.proposal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.proposal-main {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.central-icon {
+    width: 120px;
+    height: 120px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+}
+
+.central-icon i {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.proposal-main h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.proposal-description {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.feature {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--accent-turquoise);
+    margin-bottom: 15px;
+}
+
+.feature span {
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Diapositivas de Módulos (4, 5, 6) */
+.module-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.module-header i {
+    font-size: 3rem;
+    color: var(--accent-turquoise);
+    margin-right: 20px;
+}
+
+.module-header h1 {
+    color: var(--primary-blue);
+    font-size: 2.2rem;
+}
+
+.feature-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-3px);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--accent-turquoise);
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.feature-item h3 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Diapositiva 5 - Trazabilidad */
+.integration-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.central-hub {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.central-hub i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.connections {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.system-node {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 2px solid var(--accent-turquoise);
+}
+
+.system-node i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.benefits-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.benefit {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    flex: 1;
+}
+
+.benefit i {
+    font-size: 2rem;
+    color: var(--accent-turquoise);
+    margin-bottom: 10px;
+}
+
+/* Diapositiva 6 - Web */
+.web-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.web-feature {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.web-feature:hover {
+    transform: translateY(-5px);
+}
+
+.web-feature i {
+    font-size: 2.5rem;
+    color: var(--accent-turquoise);
+    margin-bottom: 20px;
+}
+
+.web-feature h3 {
+    color: var(--primary-blue);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.web-feature p {
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+/* Diapositiva 7 - Beneficios */
+.slide-7 h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.benefit-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card.primary {
+    background: var(--gradient);
+    color: var(--white);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.benefit-card:not(.primary) i {
+    color: var(--accent-turquoise);
+}
+
+.benefit-card.primary i {
+    color: var(--white);
+}
+
+.benefit-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.benefit-card:not(.primary) h3 {
+    color: var(--primary-blue);
+}
+
+.benefit-card p {
+    line-height: 1.5;
+}
+
+.benefit-card:not(.primary) p {
+    color: var(--text-dark);
+}
+
+/* Diapositiva 8 - CTA */
+.cta-container {
+    text-align: center;
+}
+
+.cta-container h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.cta-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.cta-text h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-text p {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.contact-item i {
+    color: var(--accent-turquoise);
+    font-size: 1.2rem;
+}
+
+.cta-visual i {
+    font-size: 8rem;
+    color: var(--accent-turquoise);
+}
+
+.demo-button {
+    background: var(--gradient);
+    color: var(--white);
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.demo-button:hover {
+    transform: scale(1.05);
+}
+
+/* Diapositiva 9 - Branding */
+.branding-container {
+    text-align: center;
+}
+
+.company-logo {
+    margin-bottom: 40px;
+}
+
+.logo-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.logo-icon i {
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.company-logo h1 {
+    color: var(--primary-blue);
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.tagline {
+    margin-bottom: 50px;
+}
+
+.tagline h2 {
+    color: var(--accent-turquoise);
+    font-size: 1.5rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.experience-section {
+    margin-bottom: 50px;
+}
+
+.experience-section h3 {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.clients-logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.client {
+    background: var(--white);
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.specialties {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.specialty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.specialty i {
+    font-size: 2rem;
+    color: var(--accent-turquoise);
+}
+
+.specialty span {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Navegación */
+.navigation {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+.nav-btn {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--accent-turquoise);
+}
+
+.slide-counter {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .slide {
+        padding: 40px;
+    }
+    
+    .content-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .web-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .title-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .title-section h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .slide {
+        padding: 20px;
+    }
+    
+    .features-grid,
+    .web-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .specialties,
+    .clients-logos {
+        flex-direction: column;
+        gap: 20px;
+    }
+} 
